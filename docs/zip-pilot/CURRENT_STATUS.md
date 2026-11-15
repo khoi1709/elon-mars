@@ -1,0 +1,32 @@
+# Current authority — ELON MARS urgent parallel execution
+
+Latest direct human ELON MARS directive supersedes this folder's old two-slice-only, pregame policy and no-publication limits. Current bounded coordination is docs/elon-mars/EXECUTION.md, not historical pilot/Studio owner notes. Target only C:/Hackathon/output/ares-release/repo /existing3012. No new project/server/port/deps/3015/ZIP writes, no save-ID reset or broad unrelated cleanup. User now authorizes normal commit/push of verified working milestones through a dedicated publisher, never force/stageall/unrelated artifacts or untested failed code.
+
+## Four concurrent Luna Max tracks
+
+- A aa411b97: ELON MARS branding, actual-ready loading/START/manual flow; ownsApp/MarsCanvas/sceneReadiness/Overlay/HUD/QuickManual/index.html +session/entrysource+own tests.
+- B 9f87ca60: solid physics/canonical element/rock/rover/world collision and input gates; ownsphysicsEngine/AstronautPlayer/roverDynamics/PlayableWatchRover+own tests. CameraRig/math handoff ONLYafterddclosure.
+- C 0b7a39a6: all5naturalgeology3–5visiblegroups/theme/texture/naturalaliases; ownworldRegions/OuterRegions/RegionLandmarks/ScientificElements/naturalSiteDefinitions/materials/MarsTerrainmaterialonly+own test. Canonical15IDs/positions/meaningstable3perregion; no regionaltechhouses, originalhome/craftpreserved.
+- D e6cabf16: outeredgeFproximity/NASAreadablepanel/onceSupply/storegamestartguards+own tests; ownscienceCatalog/scienceInteraction/ScientificInteractionPrompt/ScienceCodex/useOutpostStore/explorationProgress. Dnativeendtoendafterothersfreeze; anotherindependentcheckerforDsourceafterintegration.
+
+## Session interface already available
+
+src/modules/session/gameSession.ts CREATED/read24L exactexports getGameplayStarted():boolean defaultfalse,useGameplayStarted():boolean,startGameplay():void onceonly; useSyncExternalStore/no persistence. B/D importactualmoduleNOWunblocked. Guardactor/roverinputandframe/survivaltick/inspect/Rtoggle untilnativeSTART. A mounts/preloads3DbehindopaqueELONMARSentry andactualnamedreadinessprogress(no fakepercentage/timers/GPUwarmupclaim). STARTonlyafterrequiredactualinitialization, manualprestartdoesnotactivatecontrols. No savekey/campaignID brandingrename.
+
+## Prior foundation/camera owner — no overlap
+
+**dd48441d stillACTIVE soleownerHabitatDome/habitatFoundationGeometry/CameraRig/thirdPersonCamera+its2newtests** on already-human-approvedminimalhollowfoundation/camera. Newfourtracksdon'toverwriteitsWIP. Bworksphysics/actorsNOWthenreadsddhandoff; BcannoteditCameraRig/mathuntilddEXPLICITwrite-releaseandleadrecordsownershiptransferinELONexecution. ddmustfinishcurrentboundedpatch promptlywithtruthfultests/risks andsourcehashes, notblockwholefourtrackrolloutonisolateddetail. AllotherpriorStudioQAclosed.
+
+PrioractualgeometryQA0afnewfoundation-geometry-review3PASS+outerphysics9PASS and80ccportallegalcenterphysical/rayedgePASS; outerwedgeovershootcosmeticpreservationrisk.NDCAstronautactual18fdcompiledrigtestfoundframinggood45%atoneWIPsnapshotbutRIGHTyawcollisionalternatefeedbackwrong. ddnewvisibilitytesthandplacedcameraisnotactualrigtest; independentactualrigtestmustremainreleasegate.Activeoldinside3.0boomheight2.0WIPsource nofinalacceptance.
+
+4243nativeWIP1440frameGIANT/clippedbodyvalidimagebutorbitFAILINVALIDHARNESS: mjs128/130/148/150usedbutton:'right', whilestandarddragCameraRighandlesleftbutton0. RIGHTmovementmeansdx+200withLEFTbutton, notrightmousebutton.DoNOTchangeproductionmousebuttoncontractforbadharness. Genuineleftpointerunitright-yawfindingremainsonitsownmerit.RepeatnativeonlyafterfinalcameraownerfreezeandactualSTARTgate.
+
+## Verification/publication discipline
+
+KeepMinecraftsurvivalbars/Genshinminimap/roverWSADquickrelease/NASAcodex/saves/threeuniquenotesoncecappedsupply. Ftriggeredge range4.5mustexceedactualboundedsolidfootprints; no wholeplanet/volcanobasefilledwallblockingroutes. Cphysicalmetadata→Bphysics,Dproximitysameregion/grounded/assignedrovervalidations.Evidencelimitgasancienthypotheticalteaching/notmodernsteam; obsidian/meteoritecandidate-notcolorID; ice-notpotable/lakebiosignature-notprooflife/noNASAendorsement. No networkrequiredgameplay/APIsecrets/unlicensedassets.
+
+FocusedmakerNode/exactancestorTSonassignedpaths; fullrelease/type/npmBuildafterallsourcewritersjoin. Independentreal-inputnative loading→START→human+roverchase/orbit→solidwall/car/nodecliffbounds→all5naturalviews→F/NASA→uniquenotes/Supplyonce.Realonecontrolsnoinjectedposes/progress/saves/storeactions/DOMclick/unsafeEdgeflags.Constantemulationflags/noPlaywrightAPIguessing/leftbuttondrag. Readactualscreenshots; tests/mathdon'tcertifyvisualquality.
+
+Commit/pushonlyafterexactdiff/fullpositiveinputhash/outscopepreservation reviewandgreenmilestonegates,publisherLunaownsexplicitstagingpaths,normalexistingfeaturebranch/origin,no deploy/newlistener. Pre-existinghugeuntrackedscratch/profile/heldFieldGuide/Impacttool/unrelatedreviewMDsnotstageall. PublishedHEADlastd941featurebranch/indexempty; reference3015HEAD098ef83detachedtrackedclean. Newrootdirectivecanchangeapprovedsourcebutdon'terasebaselinehistory.
+
+Solplanningonly; quotaUNKNOWN/no actual<10sensor/nofabricatedOpusKirofailover.Goal705rev6objectiveupdatedELONfourtracksbutmodelresumeREJECTEDphasepaused; ordinaryforegrounddirecthumancontinueexecutes,noautogoalclaim/newgoalbypass.Userurgentparallelmeansdisjointactualimplementation/test/native—notunsafecoediting/fakeprogress/deadlines.

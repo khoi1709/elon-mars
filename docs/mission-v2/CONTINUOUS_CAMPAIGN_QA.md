@@ -1,0 +1,17 @@
+# Continuous campaign browser QA
+
+**Campaign result: PASS** — one fresh default Puppeteer Edge profile, one publicly started mission, five physically reached region reports, endgame proposal approval/arrival/departure, and persisted final reload. Final post-reload terrain/actor rendering is **visually unverified** (capture shows HUD and persisted message over a dark canvas immediately after mount).
+
+## Execution receipt
+
+- 2026-11-14 13:16:35–13:28:10 local (~11m 35s). Vite job `pwsh-5e43de73fedc45d0`: `node C:/Hackathon/node_modules/vite/bin/vite.js --host 127.0.0.1 --port 3001 --strictPort`; ready receipt Vite 5.4.21, 582 ms. Helper job `pwsh-dea2251c7d1040da`: `node .\scripts\mission-qa\browser-campaign-continuous.mjs`, completed exit code 0, `outcome=PASS`. `node --check` helper exit 0.
+- One start at Old Lake Shore; real WASD+Shift route and E interaction unlocked bases in order **Lake → Ice → Dust → Impact → Volcano**. Single profile/campaign retained across all five. Actual rover field evidence used live controls; exact Leo x/z/heading before rover entry equaled pose after exit. No mission state injection, reducer dispatch, teleport, dev-store import, unlocked flag writes, or reseeding.
+- For each region: two UI-recorded observations; essential payment once (12/4/5/4 → 10/3/4/3); actual activity; one operation; report filed; reload preserved report/progress/stock. Final stocks: Lake 8/3/4/3; Ice 8/3/4/3; Dust 10/3/4/3; Impact 8/3/4/3; Volcano 8/3/4/3. Five reports true; essential/operation/output transaction identifiers each occurred once.
+- Endgame at Dust: visible initial **HOLD** was due to missing system checks (not a Mira-returned HOLD); actual Air & heat, Shelter, Comms controls reached **GO** at 10 EU / 3 meals / 4 water / 3 air. `geologic-history` selected. Public “Send proposal to Mira” reached `sent` at revision 6797; Mira response advanced to approved at revision 6798. Arrival cinematic visible and completed via Skip; later departure cinematic visibly captioned “Later — 12 sols after arrival” and completed via Skip. Final reload save revision 6800 preserved `arrival=departed`, Dust arrival base, all five reports, stocks and free-exploration-eligible mission state. Post-reload world rendering itself is unverified; no browser was reopened.
+- SHA-256 fence covered 19 listed app/runtime/offline sources before and after: `sourceChanged=[]` (including App/main, MissionGame, ActivityPanel/CSS/rules/state/store/content/contract, MissionWorld/FieldCamp/SolCompanion, cinematics/timeline/CSS, Vite config/offline plugin/runtime).
+- No FPS, device, cross-browser, or performance claim.
+
+## Artifacts
+
+- Full event/checkpoint/save report: `C:/Hackathon/scratch/2026-11/week-46/2026-11-14_campaign-continuous/report.json`.
+- Screenshots in that same folder: `01-campaign-title.png`, `02-lake-world-actor-terrain-controls.png`, five `*-report-filed.png`, `endgame-initial-hold.png`, `endgame-go-ready.png`, `proposal-sent.png`, `mira-approved.png`, `arrival-cinematic-visible.png`, `arrival-completed.png`, `departure-cinematic-visible.png`, `final-free-exploration.png`. Native visual review confirmed initial world shows actors/terrain/controls, HOLD and GO controls, Mira approval, arrival Skip, and departure Skip/12-sol caption. Final reload screenshot displays HUD/persisted departed message but dark canvas; terrain/actor after reload not visually verified.

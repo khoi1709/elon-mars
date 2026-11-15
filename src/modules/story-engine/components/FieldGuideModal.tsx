@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useStoryStore } from '@/modules/store/useStoryStore';
+import { useOutpostStore } from '@/modules/store/useOutpostStore';
+import { getRegionByPosition, WORLD_REGIONS } from '@/modules/outpost-3d/worldRegions';
 import { SolarSystemOrrery } from '@/modules/extracted-ui-kit';
 import { soundEngine } from '@/modules/audio/soundEngine';
 
@@ -12,6 +14,13 @@ export interface FieldGuideModalProps {
 export const FieldGuideModal: React.FC<FieldGuideModalProps> = ({ isOpen, onClose }) => {
   const dataCapsules = useStoryStore((state) => state.dataCapsules);
   const openScienceCard = useStoryStore((state) => state.openScienceCard);
+  const expedition = useOutpostStore((state) => state.expeditionProgress);
+  const expeditionWarning = useOutpostStore((state) => state.expeditionStorageWarning);
+  const startExpedition = useOutpostStore((state) => state.startExpedition);
+  const activateExpeditionBase = useOutpostStore((state) => state.activateExpeditionBase);
+  const playerPos = useOutpostStore((state) => state.playerPos);
+  const playerGrounded = useOutpostStore((state) => state.isPlayerGrounded);
+  const drivingRover = useOutpostStore((state) => state.isDrivingRover);
 
   const [activeTab, setActiveTab] = useState<'codex' | 'telescope'>('codex');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -45,6 +54,12 @@ export const FieldGuideModal: React.FC<FieldGuideModalProps> = ({ isOpen, onClos
 
   const unlockedCount = dataCapsules.filter((c) => c.unlocked).length;
   const progressPercent = Math.round((unlockedCount / dataCapsules.length) * 100);
+  const playerRegion = getRegionByPosition(playerPos[0], playerPos[2]);
+  const nearbyBase = playerRegion.id === 'home' || drivingRover || !playerGrounded
+    ? undefined
+    : WORLD_REGIONS.find((region) => region.id === playerRegion.id &&
+      Math.hypot(playerPos[0] - region.baseConsole.x, playerPos[2] - region.baseConsole.z) <= 8);
+  const activeBaseCount = Object.values(expedition.bases).filter((base) => base.active).length;
 
   return (
     <div
@@ -138,6 +153,22 @@ export const FieldGuideModal: React.FC<FieldGuideModalProps> = ({ isOpen, onClos
         {/* Content Body */}
         {activeTab === 'codex' ? (
           <div className="flex-1 overflow-y-auto space-y-4">
+            <section className="rounded-xl border border-amber-500/30 bg-amber-950/20 px-3 py-2 flex flex-wrap items-center justify-between gap-2">
+              <div>
+                <p className="text-[11px] text-amber-200 font-bold">Five-region expedition holds training telemetry steady. Mission stock uses separate EU units.</p>
+                <p className="text-[10px] text-gray-400">{expedition.enabled ? `${activeBaseCount} of 5 stations activated` : 'Optional original-map expedition'}</p>
+                {expeditionWarning && <p role="status" className="text-[10px] text-amber-300">{expeditionWarning}</p>}
+              </div>
+              {!expedition.enabled ? (
+                <button onClick={startExpedition} className="min-h-12 px-3 rounded-lg border border-amber-400/50 bg-amber-500/15 text-xs font-bold text-amber-200 hover:bg-amber-500/25">
+                  Begin expedition
+                </button>
+              ) : nearbyBase && !expedition.bases[nearbyBase.id].active ? (
+                <button onClick={() => activateExpeditionBase(nearbyBase.id)} className="min-h-12 px-3 rounded-lg border border-amber-400/50 bg-amber-500/15 text-xs font-bold text-amber-200 hover:bg-amber-500/25">
+                  Activate {nearbyBase.name} station
+                </button>
+              ) : null}
+            </section>
             {/* Category Filter Pills */}
             <div className="flex items-center gap-2 overflow-x-auto pb-1">
               {categories.map((cat) => (
@@ -207,6 +238,10 @@ export const FieldGuideModal: React.FC<FieldGuideModalProps> = ({ isOpen, onClos
                 );
               })}
             </div>
+          </div>
+        ) : activeTab === 'telescope' ? (
+          <div className="flex-1 overflow-hidden rounded-2xl border border-cyan-500/30">
+            <SolarSystemOrrery className="w-full h-full" />
           </div>
         ) : (
           <div className="flex-1 overflow-hidden rounded-2xl border border-cyan-500/30">

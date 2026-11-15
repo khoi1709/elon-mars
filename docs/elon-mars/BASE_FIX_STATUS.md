@@ -1,0 +1,13 @@
+# Base-entry and floor bug — in progress, not accepted
+
+Latest user reports camera changing perspective entering the base and going through the base floor. Published a5cd1a0's prior spawn/F checks did not cover repeated entry/exit or floor contact; its green tests are not proof this bug was absent.
+
+Confirmed native: no mouse input, yaw+1.35→−.93 (~−2.28rad) after two short inside walking pulses. Confirmed geometry: main plinth top−.4 equals ground, but rendered grounded boot vertices sink2–6cm. Ramp/deck/treads lack matching support; observation deck top1.91; East closed tube bottom−.1 conflicts with walking−.4. Correct ramp box center−.2 and top atcenter−.11869, not earlier−.071 estimate.
+
+Old camera maker b700 CLOSED after partial continuous radius blend/no human yaw offsets/removing broad>1.5snap/restoring home ring collision. This stops large yaw flips but causes fresh START black view: camera[0,.794,4.165] is behind opaque South shutter atz3.86. Independent47e waited1.2s and confirmed19actor meshes exist; not timing/missingactor. No release acceptance. Old floor maker d655 CLOSED after only shared24LhabitatFloorDefinitions+unusedphysics import, no actual support logic/tests. Both interrupted/ended; no overlapping writer.
+
+Current sole writers: camera54a9bdf7-f0b6-4d44-b473-9ac8e004ea20 owns CameraRig/thirdPersonCamera/newbase-camera-transitiontest; floor7332395e-61df-4a0a-a4c7-cd6012bb2eae owns physics/sharedfloor definitions/base-floor render/actor contact and newbase-floor-collisiontest. Native47e source-readonly has closed baseline; restart only after current changes are ready. No other camera/floor writer.
+
+Acceptance: actual fresh START full visible actor, not black; no automatic camera quarter-turn during two repeated East entries/returns without mouse; non-inverted orbit remains. Solid base support matches actual rendered slope/deck/treads and clear open airlock at existing ground, no whole-world raise/teleport/hidden home/ignored solid-camera wall. Grounded boots and jump landings must not penetrate the surface. Tests must exercise actual CameraRig trajectory and mounted geometry/physics, not just source regex or hand-placed cameras. Preserve startup/NASA/rover controls/saves/other world.
+
+Parent-managed preview pwsh-2ed91add4e324528 stays running at existing3012. Do not start another server, change dependencies or touch3015/reference ZIPs. Run full tests/exact ancestor TypeScript/build plus independent native check after writers close; normal bounded commit/push only if verified. Goal09915c4d active; no completed-fix claim while black spawn/floor support is unresolved.

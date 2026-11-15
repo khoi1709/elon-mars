@@ -1,0 +1,17 @@
+# Independent offline bootstrap check — 2026-11-14
+
+**Verdict: FAIL — functional offline bootstrap was not achieved.** The first independent runtime launch, job `pwsh-6a756e37f57044fd`, exited 1 before evaluation with `SyntaxError: Unexpected token 'catch'` at `offline-check.mjs:37` (Node v22.22.3). Static review found two additional harness defects: its Vite entry was derived from `process.cwd()` rather than the actual workspace root, and its Edge selection did not check whether the executable existed. Those defects and the brace error were repaired within the authorized scratch harness; no application/plugin/test/dependency/configuration source changed. The bounded rerun and actual offline failure are recorded below.
+
+## Bounded independent attempt — 2026-11-14 05:21 UTC
+
+The repaired harness passed `node --check` (exit 0) and ran as job `pwsh-816fcea619724cd9` (exit 0). It served the frozen build with an owned preview process (PID 32376), then closed the browser and stopped that process with SIGTERM. Evidence: [runtime-evidence.json](../../scratch/2026-11/week-46/2026-11-14_offline-bootstrap-check/runtime-evidence.json).
+
+The online readiness gate passed at `http://127.0.0.1:3002/?mission=frontiers`: `.mission-start-screen` appeared with six buttons, including `Begin field mission`. Service-worker registration became active; its precache had 28 entries. The first online controller was null, so the checker reloaded while online; the subsequent page was DOM-ready and controlled by `http://127.0.0.1:3002/service-worker.js`. The checker then enabled browser offline emulation and stopped its own preview (PID 32376) with SIGTERM; Node recorded `{ "code": null, "signal": "SIGTERM" }`. Reloaded offline application readiness failed within 12 seconds: no start screen, no root children, and empty body. Browser diagnostics recorded four offline `net::ERR_FAILED` resource requests: `assets/index-CD6FefZd.css`, `assets/index-C4GWcNbd.js`, `assets/three-vendor-oq5TaoqD.js`, and `assets/ui-vendor-DmqW5eVi.js`; no `pageerror` was recorded. Because the offline UI did not mount, no interaction was possible. The run did not establish why those network requests failed; it does not prove a Vary mismatch or justify a service-worker change.
+
+## Existing frozen-candidate evidence (not independently repeated)
+
+The prior [offline runtime review](OFFLINE_RUNTIME_REVIEW.md) records a fresh-browser service-worker cache of 28 entries and successful direct retrieval/hash checks for cached mission data, a font, and three JavaScript chunks. It also records that offline navigation returned HTML while the app root remained empty, with no buttons or demonstrated interaction; several browser resource requests failed offline. That report's verdict was INCOMPLETE, and its QA was against the earlier candidate dist. In this independent run, the new cache manifest `ares-v2-ares-cradle-15b7bf689009d091bfef` was observed with 28 entries; the reported `npm run build` itself was not repeated here.
+
+## Scope and cleanup
+
+No application, service-worker, plugin, test, dependency, or configuration source was changed. No conclusion is drawn that Vary mismatch caused the offline failure. The browser was closed by Puppeteer (`browserClosed: true`); the only preview process owned by this checker (PID 32376) was stopped with SIGTERM. The offline browser session could not reach an app button, so no real interaction was possible. This is a runtime failure, not an application-source diagnosis or a service-worker fix.

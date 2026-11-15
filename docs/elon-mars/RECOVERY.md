@@ -1,0 +1,11 @@
+# Emergency live checkpoint
+
+All previous aa411/9f87/0b7/e6cab and dd484 workers FAILED/ended. Current four recovery writers: A b471870d entry/App+solebuild+restoreexisting3012 listener; B79795774 physics/camera/actors/foundation plus actual-rig import fixture; Cb69d3d5e natural regions; Dbf052f32 NASA/prompt/store. No old writer overlap. All new writes preserve actual partial code; no reset/scaffold/deps/3015/ZIP.
+
+Actual initial findings: exactTS0, BUT3012NOlistener/connectionrefused; Appoldunwired despite OriginalEntryFlow/session APIexisting. A instructed to wire existing flow and restore target3012 with managed existing-repo Vite job ONLY (normalpackage dev script, strictport3012). No need Computer Use adapter (currentlyENOENT): independentec647 browserQA uses already-installedPuppeteerCore+securedefaultEdge. Do not start duplicate server; A owns listener repair/jobID.
+
+B actualsolidcollision5/5 +foundation3/3 alreadyPASS; no physics rewrite needed. Actualcamera test first blockedbytestshim missingexistinggameSession import; B authorized minimal actualmodule-fixture update preserving geometric/control assertions and productiondefaultfalse. Focus camera feedback/math/actual visible body, not endless aperture polish. Standardleftmousebuttondragdx+RIGHT/dy−UP; old4243right-button test invalid. D actual15NASArecords+panel/F/guards already present, runningfasttest. C actual43proxies/20rocks/5hero/15canon alreadypresent, minimal visibility/dedicatedregiontestnotblockingpolish.
+
+Independentec647 native loading→START→body/orbit→physicalnode→F/NASA/progress afterlistenerready. Publisher4885readonlypreflightcurrentGitHubares-cradle/index/dependencyclosure; stage/commit/pushONLYafterfreshlivecoreproof+sourcefreeze+greenbuild, exactexplicitrelatedpaths no stageall/force/reset/clean/stash. Userauthorizednormaltestedpush/target3012repair; no publicdeployment/alternateproject/server or authconfigchanges.
+
+Firstdeadlineisplayablevisiblecore. Secondaryfeature>2mincut/defer notfalseclaim; neverdisableessentialvalidationorcallmissingcamera/NASAproved. Needactualfirstcode/livepages notmorelongplans.QuotaremainsUNKNOWN/nofailoverclaim.Goal705rev6pausedresumetoolrejected; directhumanforegroundworkauthorized.

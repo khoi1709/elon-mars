@@ -28,3 +28,8 @@ backend/db.sqlite3
 venv/
 .venv/
 env/
+
+# Local QA artifacts and browser profiles
+/scratch/
+/output/
+/isolatedoutput/
